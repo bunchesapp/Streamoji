@@ -59,7 +59,7 @@ internal extension UIImageView {
 
 internal final class EmojiView: UIView {
     private let imageView: UIImageView = UIImageView()
-    internal let label: UILabel = UILabel()
+    internal let label: EmojiLabel = EmojiLabel()
 
     private var token: NSKeyValueObservation?
     internal func setFromRenderView(_ view: UIImageView) {
@@ -91,5 +91,12 @@ internal final class EmojiView: UIView {
         super.layoutSubviews()
         label.frame = self.bounds
         imageView.frame = self.bounds
+    }
+}
+
+internal final class EmojiLabel: UILabel {
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        super.drawText(in: rect.inset(by:insets))
     }
 }
