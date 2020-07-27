@@ -81,7 +81,7 @@ internal final class EmojiView: UIView {
 
     private func commonInit() {
         imageView.contentMode = .scaleAspectFit
-        label.font = .systemFont(ofSize: frame.width/1)
+        label.font = .systemFont(ofSize: frame.width/1.2)
         label.numberOfLines = 0
         addSubview(imageView)
         addSubview(label)
